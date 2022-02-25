@@ -5,7 +5,7 @@ export default function List(props) {
     <div>
       <div>
         <p className="Grade-List">
-          Test {props.num}          {props.score} %{" "}
+          Test {props.num} {props.score} %{" "}
         </p>
       </div>
     </div>

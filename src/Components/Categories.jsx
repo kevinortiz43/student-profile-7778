@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import List from "./List";
 import Button from "./Button";
 import AddTags from "./AddTags";
+
 export default function Categories(props) {
   const [show, setShow] = useState(false);
+
   return (
     <div className="API-Call" key={props.API.id}>
       <div className="Thumbnail-Container">
@@ -28,7 +30,6 @@ export default function Categories(props) {
               <List score={score} key={i} num={i + 1} />
             ))
           : null}
-
         <div className="tag-Container">
           {props.API.tags.map((tag, i) => (
             <div className="tag" key={i}>
@@ -36,10 +37,8 @@ export default function Categories(props) {
             </div>
           ))}
         </div>
-
         <AddTags key={props.API.id} API={props.API} onEnter={props.onEnter} />
       </div>
-
       <Button setShow={setShow} show={show} />
     </div>
   );

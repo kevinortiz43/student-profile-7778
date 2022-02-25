@@ -1,39 +1,32 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import AddTags from "./AddTags";
 import SearchTags from "./SearchTags";
 import SearchName from "./SearchName";
-import Button from "./Button";
 import Categories from "./Categories";
 
 export default function API() {
   const [fetching, setFetching] = useState([]);
+  // useState for setting up fetch request
   const [searchBar, setSearchBar] = useState("");
-  const [tags, setTags] = useState([]);
-  
+  //  useState for searching name
   const [searchTags, setSearchTags] = useState("");
+  //   useState for searching tags
 
   let onEnter = (event, API, newTag) => {
     if (event.key === "Enter") {
-      console.log(event.target.value);
-
       let newFetching = [...fetching];
       let index = newFetching.findIndex((o) => API.id === o.id);
-
       newFetching[index].tags.push(newTag);
       setFetching(newFetching);
-
-      // setFetching(fetching.map(obj =>  if()))
-      // setTags([...tags, { id: API.id, tag: event.target.value }]);
-      console.log(tags);
+      // adding a tag property to our objects
     }
   };
-
   let fetch = {
     method: "GET",
     url: `https://api.hatchways.io/assessment/students`,
   };
   function callAPI() {
+    // axios call
     axios
       .request(fetch)
       .then(function (response) {
@@ -42,7 +35,6 @@ export default function API() {
             return { ...object, tags: [] };
           })
         );
-        console.log(response.data.students);
       })
       .catch(function (error) {
         console.error(error);
@@ -56,12 +48,14 @@ export default function API() {
     <div>
       <div className="searchbar-Container">
         <SearchName setSearchBar={setSearchBar} />
+        {/* Component for our name searchbar */}
         <SearchTags setSearchTags={setSearchTags} />
+        {/* Component for our tag searchbar  */}
       </div>
-      <div className="mega-Container">
+      <div className="main-Container">
         {fetching
+          // filtering for both our searchbars
           .filter((value) => {
-            console.log(value.tags.includes("tag"));
             if (searchBar === "") {
               if (searchTags === "") {
                 return true;
@@ -86,7 +80,7 @@ export default function API() {
           .map((API) => (
             <div>
               <Categories key={API.id} API={API} onEnter={onEnter} />
-             
+              {/* Component for displaying the categories of each client */}
             </div>
           ))}
       </div>

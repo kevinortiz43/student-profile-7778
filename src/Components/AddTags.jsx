@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function AddTags(props) {
+export default function AddTags(props) {
   const [addTag, SetaddTag] = useState("");
 
   const handleAddTag = (event) => {
@@ -29,5 +29,3 @@ function AddTags(props) {
     </div>
   );
 }
-
-export default AddTags;
