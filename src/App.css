@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap");
+
+.App {
+  font-family: "Raleway";
+}
+
+.API-Call {
+  display: flex;
+  border: 0.5px solid;
+  border-color: whitesmoke;
+  padding: 10px;
+}
+
+.mega-Container {
+  margin-top: 110px;
+}
+
+.Contact-List {
+  display: block;
+  position: relative;
+  left: 70px;
+  margin: -20px;
+  position: relative;
+  top: -30px;
+  margin: 4px;
+  font-size: 30px;
+}
+
+.searchBar {
+  border: none;
+  height: 50px;
+  width: 100%;
+  border-style: none none solid none;
+  border-color: aliceblue;
+  background: none;
+}
+
+.addTagBar {
+  border-style: none none solid none;
+  margin: 30px;
+  z-index: 1;
+}
+
+.tag-Container {
+  display: flex;
+  width: 100%;
+}
+
+.tag {
+  margin-left: 7px;
+  border-radius: 10px;
+  background-color: lightgray;
+  opacity: 80%;
+  padding: 10px;
+  font-weight: 800;
+  font-size: medium;
+}
+
+h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.searchbar-Container {
+  position: fixed;
+  border: solid;
+  width: 100%;
+  background-color: white;
+  z-index: 9000;
+  top: 0;
+}
+
+.Emails {
+  position: relative;
+  top: -30px;
+  margin: 4px;
+  font-size: 30px;
+}
+.Companies {
+  position: relative;
+  top: -30px;
+  margin: 4px;
+  font-size: 30px;
+}
+
+.Skills {
+  position: relative;
+  top: -30px;
+  margin: 4px;
+  font-size: 30px;
+}
+.Averages {
+  position: relative;
+  top: -30px;
+  margin: 4px;
+  font-size: 30px;
+}
+.Names {
+  font-size: 58px;
+  position: relative;
+  right: 15px;
+  top: -17px;
+}
+
+button {
+  position: absolute;
+  right: 2em;
+  font-size: xx-large;
+  opacity: 40%;
+  font-weight: 1000;
+  background: none;
+  border: none;
+}
+
+button:hover {
+  color: black;
+  opacity: 100%;
+}
+
+.Grade-List {
+  font-size: medium;
+  /* justify-content: space-between; */
+  /* width: 10px; */
+  word-spacing: 7px;
+}
+
+.Thumbnails {
+  display: flex;
+  border: 2px solid #ccc;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.Thumbnail-Container {
+  display: flex;
+  align-items: center;
+}
